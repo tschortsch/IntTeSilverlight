@@ -22,11 +22,18 @@ namespace IntTeTestat
         {
             InitializeComponent();
             WebContext.Current.GuessServiceClient.StartGameReceived += OnStartGameReceived;
+            ContentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
 
        
         private void OnStartGameReceived(object sender, StartGameReceivedEventArgs e)
         {
+
+        }
+
+        private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
         }
     }
 
