@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using IntTeTestat.ViewModel;
 
 namespace IntTeTestat
 {
@@ -17,11 +18,12 @@ namespace IntTeTestat
         public PickName()
         {
             InitializeComponent();
+            DataContext = new GameModel();
         }
 
-        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
-
+            WebContext.Current.GuessServiceClient.AddNameAsync(nameTextBox.Text);
         }
     }
 }

@@ -26,6 +26,7 @@ namespace IntTeTestat.Web
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void AddName(string name)
         {
+           // _client.StartGame();
         }
 
         [OperationContract(IsOneWay = true)]
