@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Windows.Navigation;
 
 namespace IntTeTestat
 {
@@ -17,11 +18,6 @@ namespace IntTeTestat
         public Welcome()
         {
             InitializeComponent();
-        }
-
-        private void hyperlinkButton1_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
