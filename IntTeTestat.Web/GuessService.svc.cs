@@ -50,9 +50,8 @@ namespace IntTeTestat.Web
 
         private void createGame()
         {
-            IList<Player> playersOfGame = waitingPlayers.GetRange(0, 3);
+            this.game = new Game(waitingPlayers.GetRange(0, 3));
             waitingPlayers.RemoveRange(0, 3);
-            this.game = new Game(playersOfGame);
             GuessService.games.Add(this.game);
         }
 
