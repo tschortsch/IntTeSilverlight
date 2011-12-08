@@ -75,6 +75,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Game.cs" />
+    <Compile Include="Domain\Player.cs" />
     <Compile Include="GuessService.svc.cs">
       <DependentUpon>GuessService.svc</DependentUpon>
     </Compile>
