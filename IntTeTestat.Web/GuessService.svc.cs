@@ -66,7 +66,8 @@ namespace IntTeTestat.Web
         [OperationContract(IsOneWay = true)]
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void QuitConnect()
-        { 
+        {
+            //_client.ConnectCanceled();
         }
     }
 
