@@ -9,7 +9,6 @@ using IntTeTestat.Web.Domain;
 
 namespace IntTeTestat.Web
 {
-    
     [ServiceContract(Namespace = "", CallbackContract = typeof(IGuessService))]
     [SilverlightFaultBehavior]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
@@ -20,6 +19,7 @@ namespace IntTeTestat.Web
         private static List<Game> games = new List<Game>();
         private Player player;
         private Game game;
+        private const int MAX_PLAYER_PER_GAME = 1;
         
         [OperationContract(IsOneWay = true)]
         public void Conntect()
@@ -33,25 +33,25 @@ namespace IntTeTestat.Web
         {
             this.player = new Player(name, _client);
             waitingPlayers.Add(this.player);
-            if (waitingPlayers.Count >= 3)
+            if (waitingPlayers.Count >= MAX_PLAYER_PER_GAME)
             {
-                this.createGame();
-                this.startGame();
+                this.StartGame();
             }
         }
 
-        private void startGame()
+        public void StartGame()
         {
+            CreateGame();
             foreach (Player p in this.game.Players)
             {
                 p.Client.StartGame(this.game.PlayerNames, p.Name);
             }
         }
 
-        private void createGame()
+        private void CreateGame()
         {
-            this.game = new Game(waitingPlayers.GetRange(0, 3));
-            waitingPlayers.RemoveRange(0, 3);
+            this.game = new Game(waitingPlayers.GetRange(0, MAX_PLAYER_PER_GAME));
+            waitingPlayers.RemoveRange(0, MAX_PLAYER_PER_GAME);
             GuessService.games.Add(this.game);
         }
 

@@ -82,7 +82,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SilverlightFaultBehavior.cs" />
-    <Compile Include="Util\Guess.cs" />
+    <Compile Include="Domain\Guess.cs" />
     <Compile Include="Util\Pair.cs" />
   </ItemGroup>
   <ItemGroup>
