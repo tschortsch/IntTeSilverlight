@@ -18,6 +18,9 @@ namespace IntTeTestat
 {
     public partial class MainPage : UserControl
     {
+        private string name;
+        private List<string> players;
+
         public MainPage()
         {
             InitializeComponent();
@@ -35,7 +38,13 @@ namespace IntTeTestat
        
         private void OnStartGameReceived(object sender, StartGameReceivedEventArgs e)
         {
+            GameModel gameModel = new GameModel();
+            gameModel.Name = e.playerName;
+            // TODO create observable collection of e.players
+            //gameModel.Players = e.players;
+            ContentFrame.DataContext = gameModel;
 
+            ContentFrame.Navigate(new Uri("/Game", UriKind.Relative));
         }
 
         private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
