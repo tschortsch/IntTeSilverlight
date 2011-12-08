@@ -14,11 +14,11 @@ namespace IntTeTestat.Web.Util
     [Serializable]
     public class Guess
     {
-        int guess;
-
         public Guess(int guess)
         {
-            this.guess = guess;
+            GuessValue = guess;
         }
+
+        public int GuessValue { get; set; }
     };
 }
