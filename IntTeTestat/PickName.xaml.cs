@@ -26,8 +26,8 @@ namespace IntTeTestat
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
-            WebContext.Current.GuessServiceClient.AddNameAsync(nameTextBox.Text);
             contentFrame.Navigate(new Uri("/WaitPage", UriKind.Relative));
+            WebContext.Current.GuessServiceClient.AddNameAsync(nameTextBox.Text);
         }
     }
 }

@@ -6,8 +6,9 @@
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
            d:DesignWidth="640" d:DesignHeight="480"
-           Title="Game Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+           Title="Game Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" DataContext="{Binding}">
     <Grid x:Name="LayoutRoot">
-        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="260,100,0,0" Name="label1" VerticalAlignment="Top" Width="120" Content="Game" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="252,36,0,0" Name="label1" VerticalAlignment="Top" Width="120" Content="Game" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="326,134,0,0" Name="playerLabel" VerticalAlignment="Top" Width="120" Content="{Binding Name}" />
     </Grid>
 </navigation:Page>

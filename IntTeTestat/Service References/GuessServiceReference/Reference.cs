@@ -18,52 +18,19 @@ namespace IntTeTestat.GuessServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Guess", Namespace="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Util")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<IntTeTestat.GuessServiceReference.Guess>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(IntTeTestat.GuessServiceReference.GuessTipp))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
     public partial class Guess : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string NameField;
+        private int GuessValuek__BackingFieldField;
         
-        private IntTeTestat.GuessServiceReference.GuessTipp TippField;
-        
-        private object ValueField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string Name {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<GuessValue>k__BackingField", IsRequired=true)]
+        public int GuessValuek__BackingField {
             get {
-                return this.NameField;
+                return this.GuessValuek__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public IntTeTestat.GuessServiceReference.GuessTipp Tipp {
-            get {
-                return this.TippField;
-            }
-            set {
-                if ((this.TippField.Equals(value) != true)) {
-                    this.TippField = value;
-                    this.RaisePropertyChanged("Tipp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public object Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
+                if ((this.GuessValuek__BackingFieldField.Equals(value) != true)) {
+                    this.GuessValuek__BackingFieldField = value;
+                    this.RaisePropertyChanged("GuessValuek__BackingField");
                 }
             }
         }
@@ -76,23 +43,6 @@ namespace IntTeTestat.GuessServiceReference {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GuessTipp", Namespace="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Util")]
-    public enum GuessTipp : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ToLow = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ToHeight = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Correct = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Others = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

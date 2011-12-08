@@ -17,11 +17,9 @@ namespace IntTeTestat.ViewModel
 {
     public class GameModel : INotifyPropertyChanged
     {
-        private string name;
-        private ObservableCollection<List<string>> players;
-
         public string Name { get; set; }
-        public List<string> Players { get; set; }
+        public ObservableCollection<string> Players { get; set; }
+        public ObservableCollection<Guess> Guesses { get; set; }
 
         /// <summary>
         /// Occurs when a property value changes.

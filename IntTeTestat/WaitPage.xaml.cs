@@ -15,15 +15,17 @@ namespace IntTeTestat
 {
     public partial class WaitPage : Page
     {
+        Frame contentFrame;
+
         public WaitPage()
         {
             InitializeComponent();
+            contentFrame = ((App)Application.Current).MainPage.ContentFrame;
         }
 
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
         }
-
     }
 }

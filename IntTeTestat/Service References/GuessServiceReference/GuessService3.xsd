@@ -8,19 +8,8 @@
   <xs:element name="ArrayOfGuess" nillable="true" type="tns:ArrayOfGuess" />
   <xs:complexType name="Guess">
     <xs:sequence>
-      <xs:element name="Name" nillable="true" type="xs:string" />
-      <xs:element name="Tipp" type="tns:GuessTipp" />
-      <xs:element name="Value" nillable="true" type="xs:anyType" />
+      <xs:element name="_x003C_GuessValue_x003E_k__BackingField" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Guess" nillable="true" type="tns:Guess" />
-  <xs:simpleType name="GuessTipp">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="ToLow" />
-      <xs:enumeration value="ToHeight" />
-      <xs:enumeration value="Correct" />
-      <xs:enumeration value="Others" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="GuessTipp" nillable="true" type="tns:GuessTipp" />
 </xs:schema>
