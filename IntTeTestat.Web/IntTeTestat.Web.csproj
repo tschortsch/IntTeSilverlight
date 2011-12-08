@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\System.ServiceModel.PollingDuplex.dll" />
+    <Content Include="ClientBin\IntTeTestat.xap" />
     <Content Include="GuessService.svc" />
     <Content Include="IntTeTestatTestPage.aspx" />
     <Content Include="IntTeTestatTestPage.html" />
@@ -85,7 +86,6 @@
     <Compile Include="Util\Pair.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ClientBin\" />
     <Folder Include="Resources\images\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
