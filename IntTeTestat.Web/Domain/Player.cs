@@ -7,13 +7,10 @@ namespace IntTeTestat.Web.Domain
 {
     public class Player
     {
-        private string name;
-        private IGuessService client;
-
         public Player(string name, IGuessService client)
         {
-            this.name = name;
-            this.client = client;
+            Name = name;
+            Client = client;
         }
 
         public string Name { get; set; }

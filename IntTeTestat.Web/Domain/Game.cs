@@ -7,11 +7,9 @@ namespace IntTeTestat.Web.Domain
 {
     public class Game
     {
-        IList<Player> players = new List<Player>();
-
         public Game(IList<Player> players)
         {
-            this.players = players;
+            Players = players;
         }
 
         public List<string> PlayerNames
@@ -19,7 +17,7 @@ namespace IntTeTestat.Web.Domain
             get
             {
                 List<string> names =  new List<string>();
-                foreach(Player p in players) {
+                foreach(Player p in Players) {
                     names.Add(p.Name);
                 }
                 return names;
