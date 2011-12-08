@@ -13,19 +13,17 @@ using System.Windows.Navigation;
 
 namespace IntTeTestat
 {
-    public partial class Welcome : UserControl
+    public partial class WaitPage : Page
     {
-        Frame contentFrame;
-
-        public Welcome()
+        public WaitPage()
         {
             InitializeComponent();
-            contentFrame = ((App)Application.Current).MainPage.ContentFrame;
         }
 
-        private void btnWeiter_Click(object sender, RoutedEventArgs e)
+        // Executes when the user navigates to this page.
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            contentFrame.Navigate(new Uri("/PickName", UriKind.Relative));
         }
+
     }
 }

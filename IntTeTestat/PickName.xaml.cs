@@ -15,15 +15,19 @@ namespace IntTeTestat
 {
     public partial class PickName : UserControl
     {
+        Frame contentFrame;
+
         public PickName()
         {
             InitializeComponent();
+            contentFrame = ((App)Application.Current).MainPage.ContentFrame;
             DataContext = new GameModel();
         }
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
             WebContext.Current.GuessServiceClient.AddNameAsync(nameTextBox.Text);
+            contentFrame.Navigate(new Uri("/WaitPage", UriKind.Relative));
         }
     }
 }

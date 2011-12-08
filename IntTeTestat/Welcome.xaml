@@ -7,7 +7,7 @@
     d:DesignHeight="300" d:DesignWidth="400" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
     
     <Grid x:Name="LayoutRoot" Background="White">
-        <HyperlinkButton Content="Weiter" Height="23" HorizontalAlignment="Left" Margin="173,137,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="100" TargetName="" NavigateUri="/PickName" />
         <TextBlock Height="74" HorizontalAlignment="Left" Margin="125,24,0,0" Name="textBlock1" Text="Willkommen beim Ratespiel" VerticalAlignment="Top" Width="148" TextWrapping="Wrap" />
+        <Button Content="Weiter" Height="23" HorizontalAlignment="Left" Margin="166,159,0,0" Name="btnWeiter" VerticalAlignment="Top" Width="75" Click="btnWeiter_Click" />
     </Grid>
 </UserControl>
