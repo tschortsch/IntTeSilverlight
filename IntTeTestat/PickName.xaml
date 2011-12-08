@@ -7,9 +7,9 @@
     d:DesignHeight="300" d:DesignWidth="400" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
     
     <Grid x:Name="LayoutRoot" Background="White">
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="131,85,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged" Text="" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="131,85,0,0" Name="nameTextBox" VerticalAlignment="Top" Width="120" Text="" />
         <sdk:Label Height="23" HorizontalAlignment="Left" Margin="57,87,0,0" Name="label1" VerticalAlignment="Top" Width="68" Content="Name:" />
         <TextBlock Height="49" HorizontalAlignment="Left" Margin="57,30,0,0" Name="textBlock1" Text="Hier kannst du deinen Benutzernamen wählen" VerticalAlignment="Top" TextWrapping="Wrap" Width="246" />
-        <HyperlinkButton Content="Spielen" Height="23" HorizontalAlignment="Left" Margin="272,87,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="100" />
+        <Button Content="Spielen" Height="23" HorizontalAlignment="Left" Margin="257,85,0,0" Name="btnPlay" VerticalAlignment="Top" Width="75" Click="btnPlay_Click" />
     </Grid>
 </UserControl>

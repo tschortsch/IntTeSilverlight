@@ -22,7 +22,14 @@ namespace IntTeTestat
         {
             InitializeComponent();
             WebContext.Current.GuessServiceClient.StartGameReceived += OnStartGameReceived;
+
+            WebContext.Current.GuessServiceClient.PlayerGuessReceived += new EventHandler<PlayerGuessReceivedEventArgs>(GuessServiceClient_PlayerGuessReceived); 
             ContentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
+        }
+
+        void GuessServiceClient_PlayerGuessReceived(object sender, PlayerGuessReceivedEventArgs e)
+        {
+            //e.guess
         }
 
        
