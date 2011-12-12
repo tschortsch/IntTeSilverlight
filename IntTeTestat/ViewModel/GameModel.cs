@@ -39,6 +39,7 @@ namespace IntTeTestat.ViewModel
             set
             {
                 guesses = value;
+                SendPropertyChanged("LastGuess");
             }
         }
         public string Name { get; set; }
