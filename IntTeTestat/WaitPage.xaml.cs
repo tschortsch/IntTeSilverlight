@@ -21,11 +21,17 @@ namespace IntTeTestat
         {
             InitializeComponent();
             contentFrame = ((App)Application.Current).MainPage.ContentFrame;
+            sbStar.Begin();
         }
 
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+        }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            contentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
     }
 }
