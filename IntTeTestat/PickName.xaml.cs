@@ -21,7 +21,6 @@ namespace IntTeTestat
         {
             InitializeComponent();
             contentFrame = ((App)Application.Current).MainPage.ContentFrame;
-            DataContext = new GameModel();
         }
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
