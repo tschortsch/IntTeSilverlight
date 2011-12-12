@@ -32,15 +32,12 @@ namespace IntTeTestat
 
         void OnPlayerGuessReceived(object sender, PlayerGuessReceivedEventArgs e)
         {
-            debugLabel.Content = "guess: " + e.guess.GuessValuek__BackingField;
             gameModel.Guesses.Add(e.guess);
-            gameModel.Name = "test123";
         }
 
        
         private void OnStartGameReceived(object sender, StartGameReceivedEventArgs e)
         {
-            debugLabel.Content = "gamestart receveided";
             gameModel.Name = e.playerName;
             gameModel.Players = e.players;
 

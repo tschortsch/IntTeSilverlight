@@ -20,12 +20,6 @@ namespace IntTeTestat
         public Game()
         {
             InitializeComponent();
-            WebContext.Current.GuessServiceClient.PlayerGuessReceived +=new EventHandler<GuessServiceReference.PlayerGuessReceivedEventArgs>(GuessServiceClient_PlayerGuessReceived);
-        }
-
-        void GuessServiceClient_PlayerGuessReceived(object sender, GuessServiceReference.PlayerGuessReceivedEventArgs e)
-        {
-            lastGuessLabel.Content = e.guess.GuessValuek__BackingField;
         }
 
         // Executes when the user navigates to this page.

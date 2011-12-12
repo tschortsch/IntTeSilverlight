@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace IntTeTestat.Web.Util
 {
@@ -10,19 +11,20 @@ namespace IntTeTestat.Web.Util
         Others
     }
 
-    [Serializable]
+    [DataContract]
     public class Guess
     {
         public Guess(int guess)
         {
-            GuessValue = guess;
+            Value = guess;
         }
 
         public override string ToString()
         {
-            return Convert.ToString(GuessValue);
+            return Convert.ToString(Value);
         }
 
-        public int GuessValue { get; set; }
+        [DataMember]
+        public int Value { get; set; }
     };
 }

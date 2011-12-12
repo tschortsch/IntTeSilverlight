@@ -20,17 +20,17 @@ namespace IntTeTestat.GuessServiceReference {
     [System.Runtime.Serialization.DataContractAttribute(Name="Guess", Namespace="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Util")]
     public partial class Guess : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private int GuessValuek__BackingFieldField;
+        private int ValueField;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<GuessValue>k__BackingField", IsRequired=true)]
-        public int GuessValuek__BackingField {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Value {
             get {
-                return this.GuessValuek__BackingFieldField;
+                return this.ValueField;
             }
             set {
-                if ((this.GuessValuek__BackingFieldField.Equals(value) != true)) {
-                    this.GuessValuek__BackingFieldField = value;
-                    this.RaisePropertyChanged("GuessValuek__BackingField");
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
                 }
             }
         }

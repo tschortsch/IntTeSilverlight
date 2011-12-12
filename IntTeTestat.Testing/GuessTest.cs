@@ -15,7 +15,7 @@ namespace IntTeTestat.Testing
         {
             int value = 4;
             Guess guess = new Guess(value);
-            Assert.AreEqual(value, guess.GuessValue);
+            Assert.AreEqual(value, guess.Value);
  
         }
     }

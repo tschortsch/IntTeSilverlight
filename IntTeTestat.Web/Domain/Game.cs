@@ -46,11 +46,11 @@ namespace IntTeTestat.Web.Domain
 
         public GuessTipp GetGuessTipp(Guess g)
         {
-            if (g.GuessValue.CompareTo(randomInt) == 0)
+            if (g.Value.CompareTo(randomInt) == 0)
             {
                 return GuessTipp.Correct;
             }
-            else if (g.GuessValue.CompareTo(randomInt) > 0)
+            else if (g.Value.CompareTo(randomInt) > 0)
             {
                 return GuessTipp.ToHeight;
             }
