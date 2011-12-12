@@ -25,5 +25,10 @@ namespace IntTeTestat
         {
         }
 
+        private void sendBtn_Click(object sender, RoutedEventArgs e)
+        {
+            WebContext.Current.GuessServiceClient.GuessAsync(int.Parse(guessTextBox.Text));
+        }
+
     }
 }

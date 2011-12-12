@@ -5,10 +5,17 @@
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
-           d:DesignWidth="640" d:DesignHeight="480"
+           d:DesignWidth="300" d:DesignHeight="400"
            Title="Game Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" DataContext="{Binding}">
     <Grid x:Name="LayoutRoot">
-        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="252,36,0,0" Name="label1" VerticalAlignment="Top" Width="120" Content="Game" />
-        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="326,134,0,0" Name="playerLabel" VerticalAlignment="Top" Width="120" Content="{Binding Name}" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="40,22,0,0" Name="titleLabel" VerticalAlignment="Top" Width="120" Content="Game" />
+        <sdk:Label Height="20" HorizontalAlignment="Left" Margin="92,61,0,0" Name="playerLabel" VerticalAlignment="Top" Width="141" Content="{Binding Name}" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="92,185,0,0" Name="answerLabel" VerticalAlignment="Top" Width="120" Content="{Binding Answer}" />
+        <sdk:Label Height="16" HorizontalAlignment="Left" Margin="35,109,0,0" Name="guessLabel" VerticalAlignment="Top" Width="46" Content="Guess:" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="87,105,0,0" Name="guessTextBox" VerticalAlignment="Top" Width="120" />
+        <Button Content="Senden" Height="23" HorizontalAlignment="Left" Margin="213,105,0,0" Name="sendBtn" VerticalAlignment="Top" Width="75" Click="sendBtn_Click" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="40,185,0,0" Name="antwortLabel" VerticalAlignment="Top" Width="120" Content="Antwort:" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="40,61,0,0" Name="spielerLabel" VerticalAlignment="Top" Width="120" Content="Spieler: " />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="90,150,0,0" Name="lastGuessLabel" VerticalAlignment="Top" Width="120" Content="{Binding LastGuess.GuessValue}" />
     </Grid>
 </navigation:Page>
