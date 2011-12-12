@@ -18,31 +18,31 @@ namespace IntTeTestat
 {
     public partial class MainPage : UserControl
     {
-        private string name;
-        private List<string> players;
-
+        GameModel gameModel;
         public MainPage()
         {
             InitializeComponent();
-            WebContext.Current.GuessServiceClient.StartGameReceived += OnStartGameReceived;
+            gameModel = new GameModel();
+            ContentFrame.DataContext = gameModel;
 
-            WebContext.Current.GuessServiceClient.PlayerGuessReceived += new EventHandler<PlayerGuessReceivedEventArgs>(GuessServiceClient_PlayerGuessReceived); 
+            WebContext.Current.GuessServiceClient.StartGameReceived += OnStartGameReceived;
+            WebContext.Current.GuessServiceClient.PlayerGuessReceived += OnPlayerGuessReceived;
             ContentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
 
-        void GuessServiceClient_PlayerGuessReceived(object sender, PlayerGuessReceivedEventArgs e)
+        void OnPlayerGuessReceived(object sender, PlayerGuessReceivedEventArgs e)
         {
-            //e.guess
+            Console.WriteLine("guess receveided");
+            System.Diagnostics.Debugger.Break();
+            gameModel.Guesses.Add(e.guess);
         }
 
        
         private void OnStartGameReceived(object sender, StartGameReceivedEventArgs e)
         {
-            GameModel gameModel = new GameModel();
+            Console.WriteLine("gamestart receveided");
             gameModel.Name = e.playerName;
-            // TODO create observable collection of e.players
-            //gameModel.Players = e.players;
-            ContentFrame.DataContext = gameModel;
+            gameModel.Players = e.players;
 
             ContentFrame.Navigate(new Uri("/Game", UriKind.Relative));
         }
