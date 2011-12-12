@@ -5,10 +5,19 @@
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
-           d:DesignWidth="640" d:DesignHeight="480"
+           d:DesignWidth="400" d:DesignHeight="300"
            Title="Game Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" DataContext="{Binding}">
     <Grid x:Name="LayoutRoot">
-        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="252,36,0,0" Name="label1" VerticalAlignment="Top" Width="120" Content="Game" />
-        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="326,134,0,0" Name="playerLabel" VerticalAlignment="Top" Width="120" Content="{Binding Name}" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Name="gameWelcomeTextLabel" VerticalAlignment="Top" Width="174" Content="Willkommen zum Rate Spiel" Margin="12,10,0,0" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="174,10,0,0" Name="playerNameLabel" VerticalAlignment="Top" Width="120" Content="{Binding Name}" />
+        <sdk:Label Content="Errate die Zufallszahl zwischen 1 und 10" Height="28" HorizontalAlignment="Left" Margin="12,35,0,0" Name="gameIntroductionTextLabel" VerticalAlignment="Top" Width="276" />
+        <sdk:Label Content="Dein Tipp:" Height="28" HorizontalAlignment="Left" Margin="12,84,0,0" Name="guessLabel" VerticalAlignment="Top" Width="68" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="82,80,0,0" Name="guessTextBox" VerticalAlignment="Top" Width="46" />
+        <Button Content="Prüfen" Height="23" HorizontalAlignment="Left" Margin="137,80,0,0" Name="checkGuessButton" VerticalAlignment="Top" Width="75" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="12,124,0,0" VerticalAlignment="Top" Width="120" Name="historyLabel" FontSize="9" Content="Versuche:" />
+        <sdk:Label Content="Spieler:" FontSize="9" Height="28" HorizontalAlignment="Left" Margin="268,124,0,0" Name="label1" VerticalAlignment="Top" Width="120" />
+        <sdk:DataGrid AutoGenerateColumns="False" Height="121" HorizontalAlignment="Right" Margin="0,138,12,0" Name="playerDataGrid" VerticalAlignment="Top" Width="120" />
+        <sdk:DataGrid AutoGenerateColumns="False" Height="121" HorizontalAlignment="Left" Margin="12,138,0,0" Name="historyDataGrid" VerticalAlignment="Top" Width="250" />
+        <Button Content="Beenden" Height="23" HorizontalAlignment="Left" Margin="313,265,0,0" Name="cancelButton" VerticalAlignment="Top" Width="75" />
     </Grid>
 </navigation:Page>
