@@ -13,7 +13,7 @@ using System.Windows.Navigation;
 
 namespace IntTeTestat
 {
-    public partial class Welcome : UserControl
+    public partial class Welcome : Page
     {
         Frame contentFrame;
 
@@ -23,9 +23,15 @@ namespace IntTeTestat
             contentFrame = ((App)Application.Current).MainPage.ContentFrame;
         }
 
-        private void btnWeiter_Click(object sender, RoutedEventArgs e)
+        private void playButton_Click(object sender, RoutedEventArgs e)
         {
             contentFrame.Navigate(new Uri("/PickName", UriKind.Relative));
         }
+
+        // Executes when the user navigates to this page.
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+        }
+
     }
 }

@@ -1,15 +1,17 @@
-﻿<UserControl x:Class="IntTeTestat.PickName"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    d:DesignHeight="300" d:DesignWidth="400" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
-    
-    <Grid x:Name="LayoutRoot" Background="White">
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="131,85,0,0" Name="nameTextBox" VerticalAlignment="Top" Width="120" Text="" />
-        <sdk:Label Height="23" HorizontalAlignment="Left" Margin="57,87,0,0" Name="label1" VerticalAlignment="Top" Width="68" Content="Name:" />
-        <TextBlock Height="49" HorizontalAlignment="Left" Margin="57,30,0,0" Name="textBlock1" Text="Hier kannst du deinen Benutzernamen wählen" VerticalAlignment="Top" TextWrapping="Wrap" Width="246" />
-        <Button Content="Spielen" Height="23" HorizontalAlignment="Left" Margin="257,85,0,0" Name="btnPlay" VerticalAlignment="Top" Width="75" Click="btnPlay_Click" />
+﻿<navigation:Page x:Class="IntTeTestat.PickName" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="390" d:DesignHeight="300"
+           Title="PickName Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <Grid x:Name="LayoutRoot">
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="74,97,0,0" Name="nameTextBox" VerticalAlignment="Top" Width="196" Text="" />
+        <TextBlock Height="49" HorizontalAlignment="Left" Margin="12,42,0,0" Name="nameTextBlock" Text="Wähle nun deinen Benutzernamen, welchen du während dem Spiel haben wirst." VerticalAlignment="Top" TextWrapping="Wrap" Width="364" />
+        <Button Content="Spielen" Height="23" HorizontalAlignment="Left" Margin="303,265,0,0" Name="btnPlay" VerticalAlignment="Top" Width="75" Click="btnPlay_Click" />
+        <TextBlock FontSize="16" Height="24" HorizontalAlignment="Left" Margin="12,12,0,0" Name="titleTextBlock" Text="Wähle einen Namen" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" />
+        <sdk:Label Height="28" Margin="12,97,330,0" Name="nameLabel" VerticalAlignment="Top" Content="Name:" />
     </Grid>
-</UserControl>
+</navigation:Page>
