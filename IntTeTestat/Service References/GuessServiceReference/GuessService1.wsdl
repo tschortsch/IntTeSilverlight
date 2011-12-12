@@ -5,7 +5,7 @@
       <xsd:import schemaLocation="http://localhost:1701/GuessService.svc?xsd=xsd0" />
       <xsd:import schemaLocation="http://localhost:1701/GuessService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:1701/GuessService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:1701/GuessService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Util" />
+      <xsd:import schemaLocation="http://localhost:1701/GuessService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Domain" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="GuessService_Conntect_InputMessage">

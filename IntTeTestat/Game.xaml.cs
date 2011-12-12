@@ -29,7 +29,7 @@ namespace IntTeTestat
 
         private void checkGuessButton_Click(object sender, RoutedEventArgs e)
         {
-            WebContext.Current.GuessServiceClient.GuessAsync(int.Parse(guessTextBox.Text));
+            WebContext.Current.GuessServiceClient.GuessAsync(int.Parse(guessTextBox.Text), (DataContext as GameModel).Name);
         }
     }
 }

@@ -56,9 +56,9 @@ namespace IntTeTestat.Web
 
         [OperationContract(IsOneWay = true)]
         [MethodImpl(MethodImplOptions.Synchronized)]
-        public void Guess(Int32 value)
+        public void Guess(Int32 value, string name)
         {
-            _client.PlayerGuess(new Guess(value));
+            _client.PlayerGuess(new Guess(value,name));
         }
 
         [OperationContract(IsOneWay = true)]
