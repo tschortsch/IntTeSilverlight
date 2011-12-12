@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using IntTeTestat.GuessServiceReference;
+using System.Collections.Specialized;
 
 namespace IntTeTestat.ViewModel
 {
@@ -19,7 +20,6 @@ namespace IntTeTestat.ViewModel
     {
         public ObservableCollection<string> Players { get; set; }
         public ObservableCollection<Guess> Guesses { get; set; }
-
         public string Name { get; set; }
         public Guess LastGuess {
             get
@@ -27,6 +27,25 @@ namespace IntTeTestat.ViewModel
                 return Guesses[Guesses.Count - 1];
             }
         }
+
+        
+        public GameModel() 
+        {
+            //Players.CollectionChanged += HandlePlayersChange;
+            Guesses.CollectionChanged += HandleGuessesChange;
+        }
+        
+        private void HandlePlayersChange(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            SendPropertyChanged("Players");
+        }
+  
+        private void HandleGuessesChange(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            SendPropertyChanged("Guesses");
+            SendPropertyChanged("LastGuess");
+        }
+
 
         /// <summary>
         /// Occurs when a property value changes.

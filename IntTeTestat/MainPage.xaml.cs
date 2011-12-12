@@ -32,17 +32,18 @@ namespace IntTeTestat
 
         void OnPlayerGuessReceived(object sender, PlayerGuessReceivedEventArgs e)
         {
-            Console.WriteLine("guess receveided");
-            System.Diagnostics.Debugger.Break();
+            debugLabel.Content = "guess receveided";
             gameModel.Guesses.Add(e.guess);
         }
 
        
         private void OnStartGameReceived(object sender, StartGameReceivedEventArgs e)
         {
-            Console.WriteLine("gamestart receveided");
+            debugLabel.Content = "gamestart receveided";
             gameModel.Name = e.playerName;
             gameModel.Players = e.players;
+
+            System.Diagnostics.Debugger.Break();
 
             ContentFrame.Navigate(new Uri("/Game", UriKind.Relative));
         }
