@@ -18,8 +18,29 @@ namespace IntTeTestat.ViewModel
 {
     public class GameModel : INotifyPropertyChanged
     {
-        public ObservableCollection<string> Players { get; set; }
-        public ObservableCollection<Guess> Guesses { get; set; }
+        private ObservableCollection<string> players;
+        private ObservableCollection<Guess> guesses;
+
+        public ObservableCollection<string> Players {
+            get
+            {
+                return players;
+            }
+            set
+            {
+                players = value;
+            }
+        }
+        public ObservableCollection<Guess> Guesses {
+            get
+            {
+                return guesses;
+            }
+            set
+            {
+                guesses = value;
+            }
+        }
         public string Name { get; set; }
         public Guess LastGuess {
             get
@@ -31,7 +52,9 @@ namespace IntTeTestat.ViewModel
         
         public GameModel() 
         {
-            //Players.CollectionChanged += HandlePlayersChange;
+            players = new ObservableCollection<string>();
+            guesses = new ObservableCollection<Guess>();
+            Players.CollectionChanged += HandlePlayersChange;
             Guesses.CollectionChanged += HandleGuessesChange;
         }
         
