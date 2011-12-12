@@ -45,7 +45,11 @@ namespace IntTeTestat.ViewModel
         public Guess LastGuess {
             get
             {
-                return Guesses[Guesses.Count - 1];
+                if (Guesses.Count > 0)
+                {
+                    return Guesses[Guesses.Count - 1];
+                }
+                return null;
             }
         }
 
