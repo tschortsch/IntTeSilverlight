@@ -5,9 +5,11 @@
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
-           d:DesignWidth="640" d:DesignHeight="480"
+           d:DesignWidth="390" d:DesignHeight="300"
            Title="Finished Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
     <Grid x:Name="LayoutRoot">
-        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="210,90,0,0" Name="label1" VerticalAlignment="Top" Width="120" Content="Finished" />
+        <sdk:Label Height="33" HorizontalAlignment="Left" Margin="12,12,0,0" Name="gameFinishedMessageLabel" VerticalAlignment="Top" Width="366" Content="{Binding FinishedMessage}" FontSize="16" />
+        <sdk:DataGrid AutoGenerateColumns="False" Height="211" HorizontalAlignment="Left" Margin="12,43,0,0" Name="historyDataGrid" VerticalAlignment="Top" Width="366" />
+        <Button Content="Nochmals spielen" Height="23" HorizontalAlignment="Left" Margin="260,265,0,0" Name="playAgainButton" VerticalAlignment="Top" Width="118" Click="playAgainButton_Click" />
     </Grid>
 </navigation:Page>

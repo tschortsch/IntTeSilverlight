@@ -9,11 +9,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using IntTeTestat.ViewModel;
+using System.Windows.Navigation;
 
 namespace IntTeTestat
 {
-    public partial class PickName : UserControl
+    public partial class PickName : Page
     {
         Frame contentFrame;
 
@@ -28,5 +28,11 @@ namespace IntTeTestat
             contentFrame.Navigate(new Uri("/WaitPage", UriKind.Relative));
             WebContext.Current.GuessServiceClient.AddNameAsync(nameTextBox.Text);
         }
+
+        // Executes when the user navigates to this page.
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+        }
+
     }
 }

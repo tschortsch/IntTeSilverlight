@@ -5,9 +5,9 @@
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
-           d:DesignWidth="300" d:DesignHeight="400"
+           d:DesignWidth="390" d:DesignHeight="300"
            Title="WaitPage Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
     <Grid x:Name="LayoutRoot">
-        <sdk:Label Height="21" HorizontalAlignment="Left" Margin="64,0,0,245" Name="label1" VerticalAlignment="Bottom" Width="191" Content="Warten auf zusätzliche Spieler..." />
+        <sdk:Label Height="21" HorizontalAlignment="Left" Margin="114,0,0,205" Name="label1" VerticalAlignment="Bottom" Width="191" Content="Warten auf zusätzliche Spieler..." />
     </Grid>
 </navigation:Page>

@@ -15,14 +15,22 @@ namespace IntTeTestat
 {
     public partial class Finished : Page
     {
+        Frame contentFrame;
+
         public Finished()
         {
             InitializeComponent();
+            contentFrame = ((App)Application.Current).MainPage.ContentFrame;
         }
 
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+        }
+
+        private void playAgainButton_Click(object sender, RoutedEventArgs e)
+        {
+            contentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
 
     }
