@@ -46,7 +46,6 @@ namespace IntTeTestat
 
         private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
         {
-
         }
     }
 

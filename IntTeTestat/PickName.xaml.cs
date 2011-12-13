@@ -15,17 +15,14 @@ namespace IntTeTestat
 {
     public partial class PickName : Page
     {
-        Frame contentFrame;
-
         public PickName()
         {
             InitializeComponent();
-            contentFrame = ((App)Application.Current).MainPage.ContentFrame;
         }
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
-            contentFrame.Navigate(new Uri("/WaitPage", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/WaitPage", UriKind.Relative));
             WebContext.Current.GuessServiceClient.AddNameAsync(nameTextBox.Text);
         }
 
@@ -36,12 +33,12 @@ namespace IntTeTestat
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-            contentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
 
         private void nameTextBox_KeyUp(object sender, KeyEventArgs e)
         {
-            if (nameTextBox.Text != "")
+            if (nameTextBox.Text.Length > 0)
             {
                 btnPlay.IsEnabled = true;
             }

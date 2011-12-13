@@ -15,12 +15,9 @@ namespace IntTeTestat
 {
     public partial class WaitPage : Page
     {
-        Frame contentFrame;
-
         public WaitPage()
         {
             InitializeComponent();
-            contentFrame = ((App)Application.Current).MainPage.ContentFrame;
             sbStar.Begin();
         }
 
@@ -31,7 +28,7 @@ namespace IntTeTestat
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-            contentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
     }
 }

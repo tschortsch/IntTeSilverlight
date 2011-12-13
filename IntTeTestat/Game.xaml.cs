@@ -27,9 +27,38 @@ namespace IntTeTestat
         {
         }
 
+        private void guessTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            // check if entered value is a number
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.Key.ToString(), "\\d+") && e.Key != Key.Tab)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void guessTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (guessTextBox.Text.Length > 0)
+            {
+                checkGuessButton.IsEnabled = true;
+            }
+            else
+            {
+                checkGuessButton.IsEnabled = false;
+            }
+        }
+
         private void checkGuessButton_Click(object sender, RoutedEventArgs e)
         {
             WebContext.Current.GuessServiceClient.GuessAsync(int.Parse(guessTextBox.Text), (DataContext as GameModel).Name);
+            guessTextBox.Text = "";
+            checkGuessButton.IsEnabled = false;
+        }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            WebContext.Current.GuessServiceClient.QuitConnectAsync();
+            NavigationService.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
     }
 }

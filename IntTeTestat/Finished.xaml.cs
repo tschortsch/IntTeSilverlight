@@ -15,12 +15,9 @@ namespace IntTeTestat
 {
     public partial class Finished : Page
     {
-        Frame contentFrame;
-
         public Finished()
         {
             InitializeComponent();
-            contentFrame = ((App)Application.Current).MainPage.ContentFrame;
         }
 
         // Executes when the user navigates to this page.
@@ -30,7 +27,7 @@ namespace IntTeTestat
 
         private void playAgainButton_Click(object sender, RoutedEventArgs e)
         {
-            contentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
 
     }
