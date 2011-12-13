@@ -34,5 +34,22 @@ namespace IntTeTestat
         {
         }
 
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            contentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
+        }
+
+        private void nameTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (nameTextBox.Text != "")
+            {
+                btnPlay.IsEnabled = true;
+            }
+            else
+            {
+                btnPlay.IsEnabled = false;
+            }
+        }
+
     }
 }
