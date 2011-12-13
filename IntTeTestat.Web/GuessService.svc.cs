@@ -32,7 +32,7 @@ namespace IntTeTestat.Web
         {
             this.player = new Player(name, _client);
             waitingPlayers.Add(this.player);
-            if (waitingPlayers.Count >= Game.MAX_PLAYER_PER_GAME)
+            if (waitingPlayers.Count >= Game.PLAYER_PER_GAME)
             {
                 this.StartGame();
             }
@@ -49,8 +49,8 @@ namespace IntTeTestat.Web
 
         private void CreateGame()
         {
-            this.game = new Game(waitingPlayers.GetRange(0, Game.MAX_PLAYER_PER_GAME));
-            waitingPlayers.RemoveRange(0, Game.MAX_PLAYER_PER_GAME);
+            this.game = new Game(waitingPlayers.GetRange(0, Game.PLAYER_PER_GAME));
+            waitingPlayers.RemoveRange(0, Game.PLAYER_PER_GAME);
             GuessService.games.Add(this.game);
         }
 

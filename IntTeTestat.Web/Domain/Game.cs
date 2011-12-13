@@ -8,7 +8,7 @@ namespace IntTeTestat.Web.Domain
 {
     public class Game
     {
-        public const int MAX_PLAYER_PER_GAME = 1;
+        public const int PLAYER_PER_GAME = 2;
         public const int MIN_VALUE = 1;
         public const int MAX_VALUE = 10;
         private int randomInt;
