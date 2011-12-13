@@ -65,7 +65,9 @@ namespace IntTeTestat.Web
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void QuitConnect()
         {
-            //_client.ConnectCanceled();
+            // TODO remove player from list
+            //game.Players.Remove(player);
+            _client.ConnectCanceled();
         }
     }
 
