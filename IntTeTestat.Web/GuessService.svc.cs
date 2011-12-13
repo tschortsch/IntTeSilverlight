@@ -16,6 +16,7 @@ namespace IntTeTestat.Web
     {
         private IGuessService _client;
         private static List<Player> waitingPlayers = new List<Player>();
+        private static List<Player> currentPlayers = new List<Player>();
         private static List<Game> games = new List<Game>();
         private Player player;
         private Game game;
@@ -49,7 +50,8 @@ namespace IntTeTestat.Web
 
         private void CreateGame()
         {
-            this.game = new Game(waitingPlayers.GetRange(0, Game.PLAYER_PER_GAME));
+            currentPlayers = waitingPlayers.GetRange(0, Game.PLAYER_PER_GAME);
+            game = new Game(currentPlayers);
             waitingPlayers.RemoveRange(0, Game.PLAYER_PER_GAME);
             GuessService.games.Add(this.game);
         }
@@ -58,7 +60,10 @@ namespace IntTeTestat.Web
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void Guess(Int32 value, string name)
         {
-            _client.PlayerGuess(new Guess(value,name));
+            foreach (Player p in currentPlayers)
+            {
+                p.Client.PlayerGuess(new Guess(value, name));
+            }
         }
 
         [OperationContract(IsOneWay = true)]

@@ -30,11 +30,10 @@ namespace IntTeTestat
             ContentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
 
-        void OnPlayerGuessReceived(object sender, PlayerGuessReceivedEventArgs e)
+        private void OnPlayerGuessReceived(object sender, PlayerGuessReceivedEventArgs e)
         {
             gameModel.Guesses.Add(e.guess);
         }
-
        
         private void OnStartGameReceived(object sender, StartGameReceivedEventArgs e)
         {
