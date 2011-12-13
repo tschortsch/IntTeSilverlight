@@ -57,6 +57,15 @@ namespace IntTeTestat.Testing
         }
 
         [TestMethod]
+        public void GenerateRandomIntTest()
+        {
+            Game game = new Game(generatePlayerList(1));
+            int randomInt = game.GenerateRandomInt();
+
+            Assert.IsTrue(randomInt > Game.MIN_VALUE && randomInt < Game.MAX_VALUE, "Random integer should be between " + Game.MIN_VALUE + " and " + Game.MAX_VALUE + ", but was " + randomInt);
+        }
+
+        [TestMethod]
         public void IsGuessCorrectTest()
         {
             Game game = new Game(generatePlayerList(1));

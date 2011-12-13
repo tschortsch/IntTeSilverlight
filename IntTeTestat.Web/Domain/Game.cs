@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using IntTeTestat.Web.Util;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("IntTeTestat.Testing")]
 
 namespace IntTeTestat.Web.Domain
 {
@@ -33,14 +36,14 @@ namespace IntTeTestat.Web.Domain
 
         public IList<Player> Players { get; set; }
 
-        private int GenerateRandomInt()
+        internal int GenerateRandomInt()
         {
             Random randomGR = new Random();
             return randomGR.Next(Game.MIN_VALUE, Game.MAX_VALUE);
         }
 
         /* for unit tests only */
-        public int RandomInt
+        internal int RandomInt
         {
             get { return randomInt; }
             set { randomInt = value; }
