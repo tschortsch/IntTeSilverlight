@@ -39,6 +39,13 @@ namespace IntTeTestat.Web.Domain
             return randomGR.Next(Game.MIN_VALUE, Game.MAX_VALUE);
         }
 
+        /* for unit tests only */
+        public int RandomInt
+        {
+            get { return randomInt; }
+            set { randomInt = value; }
+        }
+
         public bool IsGuessCorrect(Guess g)
         {
             return GetGuessTipp(g).Equals(GuessTipp.Correct);
