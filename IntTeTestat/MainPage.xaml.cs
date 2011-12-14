@@ -95,7 +95,7 @@ namespace IntTeTestat
                     EndpointAddress address = new EndpointAddress("http://localhost:1701/GuessService.svc");
                     PollingDuplexHttpBinding binding = new PollingDuplexHttpBinding();
                     _proxy = new GuessServiceClient(binding, address);
-                    _proxy.ConntectAsync();
+                    _proxy.ConnectAsync();
                 }
                 return _proxy;
             }

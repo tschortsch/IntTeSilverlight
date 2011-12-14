@@ -111,10 +111,10 @@ namespace IntTeTestat.GuessServiceReference {
     [System.ServiceModel.ServiceContractAttribute(Namespace="", ConfigurationName="GuessServiceReference.GuessService", CallbackContract=typeof(IntTeTestat.GuessServiceReference.GuessServiceCallback))]
     public interface GuessService {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="urn:GuessService/Conntect")]
-        System.IAsyncResult BeginConntect(System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="urn:GuessService/Connect")]
+        System.IAsyncResult BeginConnect(System.AsyncCallback callback, object asyncState);
         
-        void EndConntect(System.IAsyncResult result);
+        void EndConnect(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="urn:GuessService/AddName")]
         System.IAsyncResult BeginAddName(string name, System.AsyncCallback callback, object asyncState);
@@ -159,11 +159,11 @@ namespace IntTeTestat.GuessServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class GuessServiceClient : System.ServiceModel.DuplexClientBase<IntTeTestat.GuessServiceReference.GuessService>, IntTeTestat.GuessServiceReference.GuessService {
         
-        private BeginOperationDelegate onBeginConntectDelegate;
+        private BeginOperationDelegate onBeginConnectDelegate;
         
-        private EndOperationDelegate onEndConntectDelegate;
+        private EndOperationDelegate onEndConnectDelegate;
         
-        private System.Threading.SendOrPostCallback onConntectCompletedDelegate;
+        private System.Threading.SendOrPostCallback onConnectCompletedDelegate;
         
         private BeginOperationDelegate onBeginAddNameDelegate;
         
@@ -269,7 +269,7 @@ namespace IntTeTestat.GuessServiceReference {
             }
         }
         
-        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> ConntectCompleted;
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> ConnectCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddNameCompleted;
         
@@ -292,47 +292,47 @@ namespace IntTeTestat.GuessServiceReference {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult IntTeTestat.GuessServiceReference.GuessService.BeginConntect(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginConntect(callback, asyncState);
+        System.IAsyncResult IntTeTestat.GuessServiceReference.GuessService.BeginConnect(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginConnect(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void IntTeTestat.GuessServiceReference.GuessService.EndConntect(System.IAsyncResult result) {
-            base.Channel.EndConntect(result);
+        void IntTeTestat.GuessServiceReference.GuessService.EndConnect(System.IAsyncResult result) {
+            base.Channel.EndConnect(result);
         }
         
-        private System.IAsyncResult OnBeginConntect(object[] inValues, System.AsyncCallback callback, object asyncState) {
+        private System.IAsyncResult OnBeginConnect(object[] inValues, System.AsyncCallback callback, object asyncState) {
             this.VerifyCallbackEvents();
-            return ((IntTeTestat.GuessServiceReference.GuessService)(this)).BeginConntect(callback, asyncState);
+            return ((IntTeTestat.GuessServiceReference.GuessService)(this)).BeginConnect(callback, asyncState);
         }
         
-        private object[] OnEndConntect(System.IAsyncResult result) {
-            ((IntTeTestat.GuessServiceReference.GuessService)(this)).EndConntect(result);
+        private object[] OnEndConnect(System.IAsyncResult result) {
+            ((IntTeTestat.GuessServiceReference.GuessService)(this)).EndConnect(result);
             return null;
         }
         
-        private void OnConntectCompleted(object state) {
-            if ((this.ConntectCompleted != null)) {
+        private void OnConnectCompleted(object state) {
+            if ((this.ConnectCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.ConntectCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+                this.ConnectCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void ConntectAsync() {
-            this.ConntectAsync(null);
+        public void ConnectAsync() {
+            this.ConnectAsync(null);
         }
         
-        public void ConntectAsync(object userState) {
-            if ((this.onBeginConntectDelegate == null)) {
-                this.onBeginConntectDelegate = new BeginOperationDelegate(this.OnBeginConntect);
+        public void ConnectAsync(object userState) {
+            if ((this.onBeginConnectDelegate == null)) {
+                this.onBeginConnectDelegate = new BeginOperationDelegate(this.OnBeginConnect);
             }
-            if ((this.onEndConntectDelegate == null)) {
-                this.onEndConntectDelegate = new EndOperationDelegate(this.OnEndConntect);
+            if ((this.onEndConnectDelegate == null)) {
+                this.onEndConnectDelegate = new EndOperationDelegate(this.OnEndConnect);
             }
-            if ((this.onConntectCompletedDelegate == null)) {
-                this.onConntectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnConntectCompleted);
+            if ((this.onConnectCompletedDelegate == null)) {
+                this.onConnectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnConnectCompleted);
             }
-            base.InvokeAsync(this.onBeginConntectDelegate, null, this.onEndConntectDelegate, this.onConntectCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginConnectDelegate, null, this.onEndConnectDelegate, this.onConnectCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -632,15 +632,15 @@ namespace IntTeTestat.GuessServiceReference {
                     base(client) {
             }
             
-            public System.IAsyncResult BeginConntect(System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginConnect(System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[0];
-                System.IAsyncResult _result = base.BeginInvoke("Conntect", _args, callback, asyncState);
+                System.IAsyncResult _result = base.BeginInvoke("Connect", _args, callback, asyncState);
                 return _result;
             }
             
-            public void EndConntect(System.IAsyncResult result) {
+            public void EndConnect(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                base.EndInvoke("Conntect", _args, result);
+                base.EndInvoke("Connect", _args, result);
             }
             
             public System.IAsyncResult BeginAddName(string name, System.AsyncCallback callback, object asyncState) {

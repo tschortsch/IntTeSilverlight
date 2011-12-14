@@ -21,7 +21,7 @@ namespace IntTeTestat.Web
         private Game game;
         
         [OperationContract(IsOneWay = true)]
-        public void Conntect()
+        public void Connect()
         {
             _client = OperationContext.Current.GetCallbackChannel<IGuessService>();
         }
@@ -100,7 +100,12 @@ namespace IntTeTestat.Web
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void QuitConnect()
         {
-            player.Game.Players.Remove(player);
+            if (player.Game != null)
+            {
+                player.Game.Players.Remove(player);
+            }
+            waitingPlayers.Remove(player);
+            
             _client.ConnectCanceled();
         }
     }

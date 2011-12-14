@@ -8,8 +8,8 @@
       <xsd:import schemaLocation="http://localhost:1701/GuessService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Domain" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="GuessService_Conntect_InputMessage">
-    <wsdl:part name="parameters" element="Conntect" />
+  <wsdl:message name="GuessService_Connect_InputMessage">
+    <wsdl:part name="parameters" element="Connect" />
   </wsdl:message>
   <wsdl:message name="GuessService_AddName_InputMessage">
     <wsdl:part name="parameters" element="AddName" />
@@ -36,8 +36,8 @@
     <wsdl:part name="parameters" element="Hint" />
   </wsdl:message>
   <wsdl:portType name="GuessService">
-    <wsdl:operation name="Conntect">
-      <wsdl:input wsaw:Action="urn:GuessService/Conntect" message="GuessService_Conntect_InputMessage" />
+    <wsdl:operation name="Connect">
+      <wsdl:input wsaw:Action="urn:GuessService/Connect" message="GuessService_Connect_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddName">
       <wsdl:input wsaw:Action="urn:GuessService/AddName" message="GuessService_AddName_InputMessage" />

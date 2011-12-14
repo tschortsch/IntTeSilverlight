@@ -14,8 +14,8 @@
   <wsdl:binding name="PollingDuplexHttpBinding_GuessService" type="GuessService">
     <wsp:PolicyReference URI="#PollingDuplexHttpBinding_GuessService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Conntect">
-      <soap12:operation soapAction="urn:GuessService/Conntect" style="document" />
+    <wsdl:operation name="Connect">
+      <soap12:operation soapAction="urn:GuessService/Connect" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
