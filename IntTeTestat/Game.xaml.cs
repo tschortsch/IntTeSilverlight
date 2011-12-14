@@ -58,7 +58,6 @@ namespace IntTeTestat
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             WebContext.Current.GuessServiceClient.QuitConnectAsync();
-            NavigationService.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
     }
 }

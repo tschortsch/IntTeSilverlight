@@ -29,7 +29,14 @@ namespace IntTeTestat
             WebContext.Current.GuessServiceClient.PlayerGuessReceived += OnPlayerGuessReceived;
             WebContext.Current.GuessServiceClient.GameOverReceived += OnGameOverReceived;
             WebContext.Current.GuessServiceClient.HintReceived += OnHintReceived;
+            WebContext.Current.GuessServiceClient.QuitConnectCompleted += OnQuitConnectCompleted;
 
+            ContentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
+        }
+
+        void OnQuitConnectCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            gameModel.Players.Remove(gameModel.Name);
             ContentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
 
