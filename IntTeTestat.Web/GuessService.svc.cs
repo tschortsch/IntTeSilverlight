@@ -16,7 +16,6 @@ namespace IntTeTestat.Web
     {
         private IGuessService _client;
         private static List<Player> waitingPlayers = new List<Player>();
-        private static List<Player> currentPlayers = new List<Player>();
         private static List<Game> games = new List<Game>();
         private Player player;
         private Game game;
@@ -51,7 +50,7 @@ namespace IntTeTestat.Web
 
         private void CreateGame()
         {
-            currentPlayers = waitingPlayers.GetRange(0, Game.PLAYER_PER_GAME);
+            List<Player> currentPlayers = waitingPlayers.GetRange(0, Game.PLAYER_PER_GAME);
             game = new Game(currentPlayers);
             waitingPlayers.RemoveRange(0, Game.PLAYER_PER_GAME);
             GuessService.games.Add(this.game);
@@ -74,7 +73,7 @@ namespace IntTeTestat.Web
 
         private void SendGuess(Guess g)
         {
-            foreach (Player p in currentPlayers)
+            foreach (Player p in player.Game.Players)
             {
                 p.Client.PlayerGuess(g);
             }
@@ -88,7 +87,7 @@ namespace IntTeTestat.Web
         private void SendGameOver()
         {
             player.Client.GameOver(true);
-            foreach (Player p in currentPlayers)
+            foreach (Player p in player.Game.Players)
             {
                 if (!p.Equals(player))
                 {
@@ -101,8 +100,7 @@ namespace IntTeTestat.Web
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void QuitConnect()
         {
-            // TODO remove player from list
-            //game.Players.Remove(player);
+            player.Game.Players.Remove(player);
             _client.ConnectCanceled();
         }
     }
