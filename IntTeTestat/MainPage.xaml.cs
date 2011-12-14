@@ -27,12 +27,20 @@ namespace IntTeTestat
 
             WebContext.Current.GuessServiceClient.StartGameReceived += OnStartGameReceived;
             WebContext.Current.GuessServiceClient.PlayerGuessReceived += OnPlayerGuessReceived;
+            WebContext.Current.GuessServiceClient.GameOverReceived += OnGameOverReceived;
+            WebContext.Current.GuessServiceClient.HintReceived += OnHintReceived;
+
             ContentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
 
         private void OnPlayerGuessReceived(object sender, PlayerGuessReceivedEventArgs e)
         {
             gameModel.Guesses.Add(e.guess);
+        }
+
+        private void OnHintReceived(object sender, HintReceivedEventArgs e)
+        {
+            gameModel.Hint = e.guessHint;
         }
        
         private void OnStartGameReceived(object sender, StartGameReceivedEventArgs e)
@@ -42,6 +50,20 @@ namespace IntTeTestat
 
             ContentFrame.Navigate(new Uri("/Game", UriKind.Relative));
         }
+
+        private void OnGameOverReceived(object sender, GameOverReceivedEventArgs e)
+        {
+            if (e.victory)
+            {
+                gameModel.FinishedMessage = "Sie haben gewonnen!";
+            }
+            else
+            {
+                gameModel.FinishedMessage = "Sie haben verloren!";
+            }
+            ContentFrame.Navigate(new Uri("/Finished", UriKind.Relative));
+        }
+
 
         private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
         {

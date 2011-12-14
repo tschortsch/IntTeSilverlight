@@ -15,6 +15,7 @@ namespace IntTeTestat.Web.Domain
 
         public string Name { get; set; }
         public IGuessService Client { get; set; }
+        public Game Game { get; set; }
 
     }
 }

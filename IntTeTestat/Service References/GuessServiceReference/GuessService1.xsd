@@ -39,7 +39,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="victory" type="xs:boolean" />
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Domain" minOccurs="0" name="playedValues" nillable="true" type="q2:ArrayOfGuess" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -51,7 +50,14 @@
   <xs:element name="PlayerGuess">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Domain" minOccurs="0" name="guess" nillable="true" type="q3:Guess" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Domain" minOccurs="0" name="guess" nillable="true" type="q2:Guess" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Hint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Domain" minOccurs="0" name="guessHint" type="q3:GuessTipp" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

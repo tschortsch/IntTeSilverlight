@@ -45,6 +45,7 @@ namespace IntTeTestat.Web
             foreach (Player p in this.game.Players)
             {
                 p.Client.StartGame(this.game.PlayerNames, p.Name);
+                p.Game = this.game;
             }
         }
 
@@ -60,9 +61,39 @@ namespace IntTeTestat.Web
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void Guess(Int32 value, string name)
         {
+            Guess guess = new Guess(value, name);
+            SendGuess(guess);
+
+            if (player.Game.IsGuessCorrect(value))
+            {
+                SendGameOver();
+            } else {
+                SendHint(guess);
+            }
+        }
+
+        private void SendGuess(Guess g)
+        {
             foreach (Player p in currentPlayers)
             {
-                p.Client.PlayerGuess(new Guess(value, name));
+                p.Client.PlayerGuess(g);
+            }
+        }
+
+        private void SendHint(Guess g)
+        {
+            player.Client.Hint(player.Game.GetGuessTipp(g));
+        }
+
+        private void SendGameOver()
+        {
+            player.Client.GameOver(true);
+            foreach (Player p in currentPlayers)
+            {
+                if (!p.Equals(player))
+                {
+                    p.Client.GameOver(false);
+                }
             }
         }
 
@@ -83,7 +114,7 @@ namespace IntTeTestat.Web
         void StartGame(List<string> players, string playerName);
 
         [OperationContract(IsOneWay = true)]
-        void GameOver(bool victory, List<Guess> playedValues);
+        void GameOver(bool victory);
 
         [OperationContract(IsOneWay = true)]
         void ConnectCanceled();
@@ -91,5 +122,7 @@ namespace IntTeTestat.Web
         [OperationContract(IsOneWay = true)]
         void PlayerGuess(Guess guess);
 
+        [OperationContract(IsOneWay = true)]
+        void Hint(GuessTipp guessHint);
     }
 }
