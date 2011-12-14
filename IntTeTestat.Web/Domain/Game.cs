@@ -49,9 +49,9 @@ namespace IntTeTestat.Web.Domain
             set { randomInt = value; }
         }
 
-        public bool IsGuessCorrect(Guess g)
+        public bool IsGuessCorrect(int value)
         {
-            return GetGuessTipp(g).Equals(GuessTipp.Correct);
+            return value == randomInt;
         }
 
         public GuessTipp GetGuessTipp(Guess g)

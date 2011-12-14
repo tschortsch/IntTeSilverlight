@@ -62,7 +62,7 @@ namespace IntTeTestat.Testing
             Game game = new Game(generatePlayerList(1));
             int randomInt = game.GenerateRandomInt();
 
-            Assert.IsTrue(randomInt > Game.MIN_VALUE && randomInt < Game.MAX_VALUE, "Random integer should be between " + Game.MIN_VALUE + " and " + Game.MAX_VALUE + ", but was " + randomInt);
+            Assert.IsTrue(randomInt >= Game.MIN_VALUE && randomInt <= Game.MAX_VALUE, "Random integer should be between " + Game.MIN_VALUE + " and " + Game.MAX_VALUE + ", but was " + randomInt);
         }
 
         [TestMethod]
@@ -72,7 +72,7 @@ namespace IntTeTestat.Testing
             int value = 2;
             game.RandomInt = value;
 
-            Assert.IsTrue(game.IsGuessCorrect(new Guess(value, "test")));
+            Assert.IsTrue(game.IsGuessCorrect(value));
         }
 
         [TestMethod]
