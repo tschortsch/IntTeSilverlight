@@ -38,5 +38,8 @@ namespace IntTeTestat.Web.Domain
             get { return PlayerName + ": " + Convert.ToString(Value);}
             set { throw new NotImplementedException(); }
         }
+
+        [DataMember]
+        public GuessTipp Answer { get; set; }
     };
 }

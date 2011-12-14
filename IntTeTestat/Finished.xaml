@@ -11,5 +11,7 @@
         <sdk:Label Height="33" HorizontalAlignment="Left" Margin="12,12,0,0" Name="gameFinishedMessageLabel" VerticalAlignment="Top" Width="366" Content="{Binding FinishedMessage}" FontSize="16" />
         <sdk:DataGrid AutoGenerateColumns="False" Height="211" HorizontalAlignment="Left" Margin="12,43,0,0" Name="historyDataGrid" VerticalAlignment="Top" Width="366" />
         <Button Content="Nochmals spielen" Height="23" HorizontalAlignment="Left" Margin="260,265,0,0" Name="playAgainButton" VerticalAlignment="Top" Width="118" Click="playAgainButton_Click" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="131,67,0,0" Name="correctGuessLabel" Content="{Binding LastGuess.PlayerAndGuess}" VerticalAlignment="Top" Width="120" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="12,67,0,0" Name="correctLabel" VerticalAlignment="Top" Width="120" Content="Richtige Antwort von" />
     </Grid>
 </navigation:Page>
