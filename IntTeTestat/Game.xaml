@@ -20,14 +20,14 @@
 
         <sdk:DataGrid AutoGenerateColumns="False" Height="121" HorizontalAlignment="Right" Margin="0,138,12,0" Name="playerDataGrid" ItemsSource="{Binding Players}" VerticalAlignment="Top" Width="110" IsReadOnly="True" CanUserResizeColumns="False">
             <sdk:DataGrid.Columns>
-                <sdk:DataGridTextColumn Binding="{Binding}" Width="110" Header="Name"  />
+                <sdk:DataGridTextColumn Binding="{Binding}" Width="*" Header="Name"  />
             </sdk:DataGrid.Columns>
         </sdk:DataGrid>
 
         <sdk:DataGrid AutoGenerateColumns="False" Height="121" HorizontalAlignment="Left" Margin="12,138,0,0" Name="historyDataGrid" VerticalAlignment="Top" Width="250" ItemsSource="{Binding Guesses}"  IsReadOnly="True" CanUserResizeColumns="True">
             <sdk:DataGrid.Columns>
-                <sdk:DataGridTextColumn Binding="{Binding PlayerName}" Width="80" Header="Spieler"  />
-                <sdk:DataGridTextColumn Binding="{Binding Value}" Width="170" Header="Wert" />
+                <sdk:DataGridTextColumn Binding="{Binding PlayerName}" Width="*" Header="Spieler"  />
+                <sdk:DataGridTextColumn Binding="{Binding Value}" Width="70" Header="Wert" />
             </sdk:DataGrid.Columns>
         </sdk:DataGrid>
         
