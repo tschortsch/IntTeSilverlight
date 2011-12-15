@@ -112,11 +112,14 @@ namespace IntTeTestat.Web
         private void SendPlayerLeft()
         {
             player.Client.ConnectCanceled();
-            foreach (Player p in player.Game.Players)
+            if (player.Game != null)
             {
-                if (!p.Equals(player))
+                foreach (Player p in player.Game.Players)
                 {
-                    p.Client.PlayerLeft(player.Name);
+                    if (!p.Equals(player))
+                    {
+                        p.Client.PlayerLeft(player.Name);
+                    }
                 }
             }
         }
