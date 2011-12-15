@@ -61,6 +61,8 @@ namespace IntTeTestat
             gameModel.Name = e.playerName;
             gameModel.Players = e.players;
             gameModel.Guesses.Clear();
+            gameModel.Hint = GuessTipp.Others;
+            gameModel.FinishedMessage = "";
 
             ContentFrame.Navigate(new Uri("/Game", UriKind.Relative));
         }
