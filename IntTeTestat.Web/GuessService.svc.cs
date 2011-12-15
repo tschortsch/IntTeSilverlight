@@ -105,8 +105,20 @@ namespace IntTeTestat.Web
                 player.Game.Players.Remove(player);
             }
             waitingPlayers.Remove(player);
-            
-            _client.ConnectCanceled();
+
+            SendPlayerLeft();
+        }
+
+        private void SendPlayerLeft()
+        {
+            player.Client.ConnectCanceled();
+            foreach (Player p in player.Game.Players)
+            {
+                if (!p.Equals(player))
+                {
+                    p.Client.PlayerLeft(player.Name);
+                }
+            }
         }
     }
 
@@ -121,6 +133,9 @@ namespace IntTeTestat.Web
 
         [OperationContract(IsOneWay = true)]
         void ConnectCanceled();
+
+        [OperationContract(IsOneWay = true)]
+        void PlayerLeft(string name);
 
         [OperationContract(IsOneWay = true)]
         void PlayerGuess(Guess guess);

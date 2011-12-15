@@ -144,6 +144,9 @@ namespace IntTeTestat.GuessServiceReference {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="urn:GuessService/ConnectCanceled")]
         void ConnectCanceled();
         
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="urn:GuessService/PlayerLeft")]
+        void PlayerLeft(string name);
+        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="urn:GuessService/PlayerGuess")]
         void PlayerGuess(IntTeTestat.GuessServiceReference.Guess guess);
         
@@ -282,6 +285,8 @@ namespace IntTeTestat.GuessServiceReference {
         public event System.EventHandler<GameOverReceivedEventArgs> GameOverReceived;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> ConnectCanceledReceived;
+        
+        public event System.EventHandler<PlayerLeftReceivedEventArgs> PlayerLeftReceived;
         
         public event System.EventHandler<PlayerGuessReceivedEventArgs> PlayerGuessReceived;
         
@@ -494,6 +499,13 @@ namespace IntTeTestat.GuessServiceReference {
             }
         }
         
+        private void OnPlayerLeftReceived(object state) {
+            if ((this.PlayerLeftReceived != null)) {
+                object[] results = ((object[])(state));
+                this.PlayerLeftReceived(this, new PlayerLeftReceivedEventArgs(results, null, false, null));
+            }
+        }
+        
         private void OnPlayerGuessReceived(object state) {
             if ((this.PlayerGuessReceived != null)) {
                 object[] results = ((object[])(state));
@@ -510,9 +522,10 @@ namespace IntTeTestat.GuessServiceReference {
         
         private void VerifyCallbackEvents() {
             if (((this.useGeneratedCallback != true) 
-                        && (((((this.StartGameReceived != null) 
+                        && ((((((this.StartGameReceived != null) 
                         || (this.GameOverReceived != null)) 
                         || (this.ConnectCanceledReceived != null)) 
+                        || (this.PlayerLeftReceived != null)) 
                         || (this.PlayerGuessReceived != null)) 
                         || (this.HintReceived != null)))) {
                 throw new System.InvalidOperationException("Callback events cannot be used when the callback InstanceContext is specified. Pl" +
@@ -613,6 +626,11 @@ namespace IntTeTestat.GuessServiceReference {
             
             public void ConnectCanceled() {
                 this.proxy.OnConnectCanceledReceived(new object[0]);
+            }
+            
+            public void PlayerLeft(string name) {
+                this.proxy.OnPlayerLeftReceived(new object[] {
+                            name});
             }
             
             public void PlayerGuess(IntTeTestat.GuessServiceReference.Guess guess) {
@@ -718,6 +736,23 @@ namespace IntTeTestat.GuessServiceReference {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    public class PlayerLeftReceivedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public PlayerLeftReceivedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string name {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }
