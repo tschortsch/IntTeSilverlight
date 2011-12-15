@@ -60,6 +60,7 @@ namespace IntTeTestat
         {
             gameModel.Name = e.playerName;
             gameModel.Players = e.players;
+            gameModel.Guesses.Clear();
 
             ContentFrame.Navigate(new Uri("/Game", UriKind.Relative));
         }
