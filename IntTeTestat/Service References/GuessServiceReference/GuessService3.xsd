@@ -11,8 +11,8 @@
   <xs:element name="Guess" nillable="true" type="tns:Guess" />
   <xs:simpleType name="GuessTipp">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="ToLow" />
-      <xs:enumeration value="ToHeight" />
+      <xs:enumeration value="TooLow" />
+      <xs:enumeration value="TooHigh" />
       <xs:enumeration value="Correct" />
       <xs:enumeration value="Others" />
     </xs:restriction>

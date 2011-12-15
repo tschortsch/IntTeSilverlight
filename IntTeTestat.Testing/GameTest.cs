@@ -92,7 +92,7 @@ namespace IntTeTestat.Testing
             int value = 2;
             game.RandomInt = value;
 
-            Assert.AreEqual(GuessTipp.ToLow, game.GetGuessTipp(new Guess(value - 1, "test")));
+            Assert.AreEqual(GuessTipp.TooLow, game.GetGuessTipp(new Guess(value - 1, "test")));
         }
 
         [TestMethod]
@@ -102,7 +102,7 @@ namespace IntTeTestat.Testing
             int value = 2;
             game.RandomInt = value;
 
-            Assert.AreEqual(GuessTipp.ToHeight, game.GetGuessTipp(new Guess(value + 1, "test")));
+            Assert.AreEqual(GuessTipp.TooHigh, game.GetGuessTipp(new Guess(value + 1, "test")));
         }
     }
 }

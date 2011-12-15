@@ -62,11 +62,11 @@ namespace IntTeTestat.Web.Domain
             }
             else if (g.Value.CompareTo(randomInt) > 0)
             {
-                return GuessTipp.ToHeight;
+                return GuessTipp.TooHigh;
             }
             else
             {
-                return GuessTipp.ToLow;
+                return GuessTipp.TooLow;
             }
         }
     }

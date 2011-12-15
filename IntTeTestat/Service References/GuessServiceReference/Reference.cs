@@ -95,10 +95,10 @@ namespace IntTeTestat.GuessServiceReference {
     public enum GuessTipp : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ToLow = 0,
+        TooLow = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ToHeight = 1,
+        TooHigh = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Correct = 2,

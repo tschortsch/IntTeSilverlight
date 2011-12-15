@@ -86,10 +86,10 @@ namespace IntTeTestat.ViewModel
             {
                 switch (Hint)
                 {
-                    case GuessTipp.ToHeight:
+                    case GuessTipp.TooHigh:
                         return "Zu hoch!";
 
-                    case GuessTipp.ToLow:
+                    case GuessTipp.TooLow:
                         return "Zu tief!";
 
                     default: return "";

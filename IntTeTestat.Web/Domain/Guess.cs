@@ -6,8 +6,8 @@ namespace IntTeTestat.Web.Domain
 {
     public enum GuessTipp
     {
-        ToLow,
-        ToHeight,
+        TooLow,
+        TooHigh,
         Correct,
         Others
     }
